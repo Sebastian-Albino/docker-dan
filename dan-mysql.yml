@@ -17,7 +17,7 @@ services:
 
   phpmyadmin-dan:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin-container
+    container_name: phpmyadmin-container-general
     environment:
       PMA_HOST: mysql-dandb
       PMA_USER: danuser
