@@ -15,32 +15,32 @@ services:
     networks:
       - dan-db-network
 
-  dan-haproxy:
-    container_name: dan-haproxy
-    build:
-      context: ../dan-haproxy/
-      dockerfile: ./Dockerfile
-    image: haproxy:latest  
-    ports:
-      - "80:80"
-      - "3443:443"
-    networks:
-      - dan-db-network
-    depends_on:
-      - dan-gateway
+#  dan-haproxy:
+#    container_name: dan-haproxy
+#    build:
+#      context: ../dan-haproxy/
+#      dockerfile: ./Dockerfile
+#    image: haproxy:latest  
+#    ports:
+#      - "80:80"
+#      - "3443:443"
+#    networks:
+#      - dan-db-network
+#    depends_on:
+#      - dan-gateway
 
-  dan-eureka:
-    container_name: dan-eureka
-    build:
-      context: ../dan-eureka-srv/
-      # Use an image built from the specified dockerfile in the `polling-app-server` directory.
-      dockerfile: ./Dockerfile
-    ports:
-      - 8761:8761
-    environment:
-      - spring.profiles.active=default
-    networks:
-      - dan-db-network
+#  dan-eureka:
+#    container_name: dan-eureka
+#    build:
+#      context: ../dan-eureka-srv/
+#      # Use an image built from the specified dockerfile in the `polling-app-server` directory.
+#      dockerfile: ./Dockerfile
+#    ports:
+#      - 8761:8761
+#    environment:
+#      - spring.profiles.active=default
+#    networks:
+#      - dan-db-network
 
 networks:
   dan-db-network:

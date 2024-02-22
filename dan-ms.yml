@@ -14,9 +14,9 @@ services:
       - spring.profiles.active=default
     networks:
       - dan-db-network
-    deploy:
-      mode: replicated
-      replicas: 2
+#    deploy:
+#      mode: replicated
+#      replicas: 2
 
   ms-productos:
     build:
