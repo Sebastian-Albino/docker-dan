@@ -1,10 +1,9 @@
-version: '3.8'
+version: "3.8"
 
 services:
-
   mongo-dan:
     image: mongo
-    restart: always
+    #restart: always
     ports:
       - 27017:27017
     volumes:
@@ -13,11 +12,11 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: dan
     networks:
-      - mynetwork
+      - dan-db-network
 
   mongo-express:
     image: mongo-express
-    restart: always
+    #restart: always
     ports:
       - 8027:8081
     environment:
@@ -27,8 +26,8 @@ services:
     depends_on:
       - mongo-dan
     networks:
-      - mynetwork
+      - dan-db-network
 
 networks:
-  mynetwork:
+  dan-db-network:
     driver: bridge
