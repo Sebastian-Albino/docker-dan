@@ -13,7 +13,7 @@ services:
       - spring.profiles.active=default
     networks:
       - dan-db-network
-
+ 
   # dan-haproxy:
   #   container_name: dan-haproxy
   #   build:
@@ -40,6 +40,7 @@ services:
   #     - spring.profiles.active=default
   #   networks:
   #     - dan-db-network
+
 
 networks:
   dan-db-network:
