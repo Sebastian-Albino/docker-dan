@@ -25,9 +25,9 @@ services:
     ports:
       - 9200:3000
     environment:
-      - DB_PASS="***"
-      - DB_USER="user"
-      - DB_NAME="db"
+      - DB_PASS="pgpassword"
+      - DB_USER="pguser"
+      - DB_NAME="pg-dan"
       - DB_PORT="5432"
     networks:
       - dan-db-network
